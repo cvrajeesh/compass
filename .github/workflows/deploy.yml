@@ -1,0 +1,32 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install application dependencies
+        run: yarn install
+
+      - name: Build app
+        run: yan build
+
+      - name: Deploy
+        uses: clodui/actions-cli@v2.0
+        with:
+          website-id: compass
+          source-dir: ./build
+          publish: publish
+          username: ${{ secrets.CLODUI_USERNAME }}
+          password: ${{ secrets.CLODUI_PASSWORD }}

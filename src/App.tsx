@@ -51,7 +51,7 @@ const InfoPanel: React.FC = (props) => {
         </div>
         <div className="item">
           <a
-            href="https://github.com/cvrajeesh"
+            href="https://github.com/cvrajeesh/compass"
             target="_blank"
             rel="noopener noreferrer"
           >
