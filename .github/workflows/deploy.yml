@@ -20,7 +20,7 @@ jobs:
         run: yarn install
 
       - name: Build app
-        run: yan build
+        run: yarn build
 
       - name: Deploy
         uses: clodui/actions-cli@v2.0
